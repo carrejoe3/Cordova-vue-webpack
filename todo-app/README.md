@@ -1,4 +1,4 @@
-# hybrid-base
+# todo-app
 
 > A Vue.js project
 

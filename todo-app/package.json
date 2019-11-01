@@ -1,5 +1,5 @@
 {
-  "name": "hybrid-base",
+  "name": "todo-app",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Joe <carre.joe3@gmail.com>",
@@ -14,8 +14,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
