@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ToDoList v-bind:todos="todos"/>
-    <CreateToDo v-on:add-todo="addTodo"/>
+    <CreateToDo v-on:add-todo="addTodo($event)"/>
   </div>
 </template>
 
@@ -16,11 +16,8 @@ export default {
     CreateToDo
   },
   methods: {
-    addTodo (title) {
-      this.todos.push({
-        title,
-        done: false
-      })
+    addTodo (toDo) {
+      this.todos.push(toDo)
     }
   },
   data () {
