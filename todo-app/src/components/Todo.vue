@@ -4,8 +4,8 @@
       <div class='header'>
         {{ todo.title }}
       </div>
-      <div class='meta'>
-        {{ todo.project }}
+      <div class="meta">
+        {{ todo.date }}
       </div>
       <div class='extra content'>
         <span class='right floated edit icon' v-on:click="showForm">
@@ -23,8 +23,8 @@
           <input type='text' v-model="todo.title" >
         </div>
         <div class='field'>
-          <label>Project</label>
-          <input type='text' v-model="todo.project" >
+          <label>Date</label>
+          <input type='date' v-model="todo.date" >
         </div>
         <div class='ui two button attached buttons'>
           <button class='ui basic blue button' v-on:click="hideForm">

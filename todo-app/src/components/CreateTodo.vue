@@ -11,8 +11,8 @@
             <input v-model="titleText" type='text' ref='title' defaultValue="">
           </div>
           <div class='field'>
-            <label>Project</label>
-            <input v-model="projectText" type='text' ref='project' defaultValue="">
+            <label>Date</label>
+            <input v-model="date" type='date' ref='date'>
           </div>
           <div class='ui two button attached buttons'>
             <button class='ui basic blue button' v-on:click="sendForm()">
@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       titleText: '',
-      projectText: '',
+      date: '',
       isCreating: false
     }
   },
@@ -46,10 +46,10 @@ export default {
     },
     sendForm () {
       const title = this.titleText
-      const project = this.projectText
+      const date = this.date
       this.$emit('add-todo', {
         title: title,
-        project: project,
+        date: date,
         done: false
       })
       this.newTodoText = ''

@@ -24,19 +24,19 @@ export default {
     return {
       todos: [{
         title: 'Todo A',
-        project: 'Project A',
+        date: '1993-09-01',
         done: false
       }, {
         title: 'Todo B',
-        project: 'Project B',
+        date: '1993-09-01',
         done: true
       }, {
         title: 'Todo C',
-        project: 'Project C',
+        date: '1993-09-01',
         done: false
       }, {
         title: 'Todo D',
-        project: 'Project D',
+        date: '1993-09-01',
         done: false
       }]
     }
