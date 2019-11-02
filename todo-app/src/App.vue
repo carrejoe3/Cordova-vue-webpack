@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <toDoList v-bind:todos="todos"/>
+    <ToDoList v-bind:todos="todos"/>
+    <CreateToDo v-on:add-todo="addTodo"/>
   </div>
 </template>
 
 <script>
-import toDoList from './components/toDoList'
+import ToDoList from './components/ToDoList'
+import CreateToDo from './components/CreateTodo'
 
 export default {
   name: 'App',
   components: {
-    toDoList
+    ToDoList,
+    CreateToDo
   },
-
-  // data function avails data to the template
+  methods: {
+    addTodo (title) {
+      this.todos.push({
+        title,
+        done: false
+      })
+    }
+  },
   data () {
     return {
       todos: [{
