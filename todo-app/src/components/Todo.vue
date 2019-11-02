@@ -27,11 +27,9 @@
             <label>Date</label>
             <input type='date' v-model="todo.date" >
           </div>
-          <div class='ui two button attached buttons'>
-            <button class='ui basic blue button' v-on:click="hideForm">
-              Close X
-            </button>
-          </div>
+          <button class='ui basic blue button closeBtn' v-on:click="hideForm">
+            Close X
+          </button>
         </div>
       </div>
       <div class='ui bottom attached green basic button' v-show="!isEditing &&todo.done">
@@ -69,18 +67,3 @@ export default {
   }
 }
 </script>
-<style>
-  .container {
-    margin-bottom: 2%;
-  }
-  .ui.segment, .ui.button {
-    font-size: 1em;
-  }
-  .header, .meta {
-    margin-bottom: 1em;
-  }
-  .icons {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
