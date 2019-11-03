@@ -52,19 +52,22 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  font-size: 5em;
+  font-size: 1em;
 }
 .container {
   margin-bottom: 2%;
 }
-.ui.segment, .ui.button {
+.ui.segment, .ui.button.icon {
+  font-size: 2em;
+}
+.ui.button {
   font-size: 1em;
 }
 .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .ui.button.cancelBtn, .ui.button.closeBtn {
-  font-size: 5em;
+  font-size: 2em;
 }
 .ui.form .field>input {
-  font-size: 4em;
+  font-size: 2em;
 }
 .header {
   font-weight: 700;
