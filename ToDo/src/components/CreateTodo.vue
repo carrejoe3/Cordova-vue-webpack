@@ -14,6 +14,14 @@
             <label>Date</label>
             <input v-model="date" type='date' ref='date'>
           </div>
+          <div class="field">
+            <label>Category</label>
+            <select class="categoryList">
+              <option v-for="(category, index) in categories" v-bind:key="index">
+                {{ category.name }}
+              </option>
+            </select>
+          </div>
           <button class='ui basic blue button createBtn' v-on:click="sendForm()">
             Create
           </button>
@@ -35,6 +43,7 @@ export default {
       isCreating: false
     }
   },
+  props: ['categories'],
   methods: {
     openForm () {
       this.isCreating = true

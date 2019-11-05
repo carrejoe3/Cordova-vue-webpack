@@ -2,7 +2,7 @@
   <div>
     <!-- <p>Completed Tasks: {{todos.filter(todo => {return todo.done === true}).length}}</p>
     <p>Pending Tasks: {{todos.filter(todo => {return todo.done === false}).length}}</p> -->
-    <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id"></todo>
+    <todo v-on:delete-todo="deleteTodo" v-on:complete-todo="completeTodo" v-for="todo in todos" v-bind:todo="todo" v-bind:key="todo.id" v-bind:categories="categories"></todo>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 import Todo from './Todo'
 
 export default {
-  props: ['todos'],
+  props: ['todos', 'categories'],
   components: {
     Todo
   },
