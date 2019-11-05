@@ -22,23 +22,18 @@ export default {
   },
   data () {
     return {
-      todos: [{
-        title: 'Todo A',
-        date: '1993-09-01',
-        done: false
-      }, {
-        title: 'Todo B',
-        date: '1993-09-01',
-        done: true
-      }, {
-        title: 'Todo C',
-        date: '1993-09-01',
-        done: false
-      }, {
-        title: 'Todo D',
-        date: '1993-09-01',
-        done: false
-      }]
+      todos: []
+    }
+  },
+  mounted () {
+    if (localStorage.todos) {
+      let savedToDos = JSON.parse(localStorage.todos)
+      this.todos.push(savedToDos[0])
+    }
+  },
+  watch: {
+    todos (updatedTodos) {
+      localStorage.todos = JSON.stringify(updatedTodos)
     }
   }
 }
