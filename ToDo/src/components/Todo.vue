@@ -6,9 +6,6 @@
           {{ todo.title }}
         </div>
         <div class="meta">
-          {{ todo.category }}
-        </div>
-        <div class="meta">
           {{ todo.date }}
         </div>
         <div class='icons'>
@@ -25,14 +22,6 @@
           <div class='field'>
             <label>Title</label>
             <input type='text' v-model="todo.title" >
-          </div>
-          <div class="field">
-            <label>Category</label>
-            <select class="categoryList" v-model="todo.category">
-              <option v-for="(category, index) in categories" v-bind:key="index">
-                {{ category.name }}
-              </option>
-            </select>
           </div>
           <div class='field'>
             <label>Date</label>
@@ -55,7 +44,7 @@
 
 <script type="text/javascript">
 export default {
-  props: ['todo', 'categories'],
+  props: ['todo'],
   data () {
     return {
       isEditing: false,

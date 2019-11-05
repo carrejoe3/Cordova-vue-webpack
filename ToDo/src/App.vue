@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <CreateToDo v-on:add-todo="addTodo($event)" v-bind:categories="categories"/>
-    <ToDoList v-bind:todos="todos" v-bind:categories="categories"/>
+    <CreateToDo v-on:add-todo="addTodo($event)"/>
+    <ToDoList v-bind:todos="todos"/>
   </div>
 </template>
 
@@ -25,28 +25,19 @@ export default {
       todos: [{
         title: 'Todo A',
         date: '1993-09-01',
-        done: false,
-        category: ''
+        done: false
       }, {
         title: 'Todo B',
         date: '1993-09-01',
-        done: true,
-        category: 'example'
+        done: true
       }, {
         title: 'Todo C',
         date: '1993-09-01',
-        done: false,
-        category: ''
+        done: false
       }, {
         title: 'Todo D',
         date: '1993-09-01',
-        done: false,
-        category: ''
-      }],
-      categories: [{
-        name: 'example1'
-      }, {
-        name: 'example2'
+        done: false
       }]
     }
   }
