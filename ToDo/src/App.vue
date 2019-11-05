@@ -66,13 +66,13 @@ export default {
 .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .ui.button.cancelBtn, .ui.button.closeBtn {
   font-size: 2em;
 }
-.ui.form .field>input, .ui.form .field>select {
+.ui.form .field>input {
   font-size: 2em;
 }
 .header {
   font-weight: 700;
 }
-.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .ui.form .field>select {
+.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn {
   margin-bottom: 1em;
 }
 .icons {
