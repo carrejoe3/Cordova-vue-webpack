@@ -14,7 +14,7 @@
             <label>Date</label>
             <input v-model="date" type='date' ref='date'>
           </div>
-          <button class='ui basic blue button createBtn' v-on:click="sendForm()">
+          <button class='ui basic blue button createBtn' :disabled="!emptyTitleText" v-on:click="sendForm()">
             Create
           </button>
           <button class='ui basic red button cancelBtn' v-on:click="closeForm">
@@ -33,6 +33,11 @@ export default {
       titleText: '',
       date: new Date().toISOString().slice(0, 10),
       isCreating: false
+    }
+  },
+  computed: {
+    emptyTitleText: function () {
+      return this.titleText.length > 0
     }
   },
   methods: {
