@@ -21,7 +21,7 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input type='text' v-model="todo.title" v-bind:class="{ 'errorField': emptyTitleText}">
+            <input type='text' v-model="todo.title" v-bind:class="{ 'errorField': emptyTitleText }">
           </div>
           <div class='field'>
             <label>Date</label>
