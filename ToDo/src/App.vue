@@ -28,7 +28,7 @@ export default {
   mounted () {
     if (localStorage.todos) {
       let savedToDos = JSON.parse(localStorage.todos)
-      this.todos.push(savedToDos[0])
+      this.todos = savedToDos
     }
   },
   watch: {
@@ -45,7 +45,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #272822;
   margin-top: 60px;
   font-size: 1em;
 }
