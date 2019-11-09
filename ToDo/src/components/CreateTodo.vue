@@ -8,13 +8,13 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input v-model="titleText" type='text' ref='title' defaultValue="">
+            <input v-model="titleText" type='text' ref='title' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText}">
           </div>
           <div class='field'>
             <label>Date</label>
             <input v-model="date" type='date' ref='date'>
           </div>
-          <button class='ui basic blue button createBtn' :disabled="!emptyTitleText" v-on:click="sendForm()">
+          <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="sendForm()">
             Create
           </button>
           <button class='ui basic red button cancelBtn' v-on:click="closeForm">
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     emptyTitleText: function () {
-      return this.titleText.length > 0
+      return !this.titleText.length > 0
     }
   },
   methods: {

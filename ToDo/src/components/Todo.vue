@@ -21,13 +21,13 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input type='text' v-model="todo.title" >
+            <input type='text' v-model="todo.title" v-bind:class="{ 'errorField': emptyTitleText}">
           </div>
           <div class='field'>
             <label>Date</label>
             <input type='date' v-model="todo.date" class="date">
           </div>
-          <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="!emptyTitleText">
+          <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="emptyTitleText">
             Close X
           </button>
         </div>
@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     emptyTitleText: function () {
-      return this.todo.title.length > 0
+      return !this.todo.title.length > 0
     }
   },
   methods: {

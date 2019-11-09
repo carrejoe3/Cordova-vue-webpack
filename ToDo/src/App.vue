@@ -85,4 +85,7 @@ export default {
 .date {
   font-size: 0.65em;
 }
+.ui.form .field>input.errorField {
+  border: 1px solid #DB2828;
+}
 </style>
