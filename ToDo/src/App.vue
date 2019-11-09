@@ -66,8 +66,10 @@ export default {
 }
 .header {
   font-weight: 700;
+  overflow-wrap: break-word;
+  line-height: initial;
 }
-.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn {
+.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .icons {
   margin-bottom: 1em;
 }
 .icons {
