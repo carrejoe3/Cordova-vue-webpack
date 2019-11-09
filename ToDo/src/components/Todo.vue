@@ -13,7 +13,7 @@
         <div class='header'>
           {{ todo.title }}
         </div>
-        <div class="meta">
+        <div class="meta date">
           {{ todo.date }}
         </div>
       </div>
@@ -25,7 +25,7 @@
           </div>
           <div class='field'>
             <label>Date</label>
-            <input type='date' v-model="todo.date" >
+            <input type='date' v-model="todo.date" class="date">
           </div>
           <button class='ui basic blue button closeBtn' v-on:click="hideForm">
             Close X

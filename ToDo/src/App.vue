@@ -62,7 +62,7 @@ export default {
   font-size: 2em;
 }
 .ui.form .field>input {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .header {
   font-weight: 700;
@@ -79,5 +79,8 @@ export default {
   margin-right: 0px;
   margin-left: 0px;
   width: 100%;
+}
+.date {
+  font-size: 0.65em;
 }
 </style>
