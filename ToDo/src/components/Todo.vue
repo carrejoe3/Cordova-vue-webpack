@@ -27,7 +27,7 @@
             <label>Date</label>
             <input type='date' v-model="todo.date" class="date">
           </div>
-          <button class='ui basic blue button closeBtn' v-on:click="hideForm">
+          <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="!emptyTitleText">
             Close X
           </button>
         </div>
@@ -49,6 +49,11 @@ export default {
     return {
       isEditing: false,
       done: false
+    }
+  },
+  computed: {
+    emptyTitleText: function () {
+      return this.todo.title.length > 0
     }
   },
   methods: {
