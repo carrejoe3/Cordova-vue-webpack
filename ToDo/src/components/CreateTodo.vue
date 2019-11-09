@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       titleText: '',
-      date: '',
+      date: new Date().toISOString().slice(0, 10),
       isCreating: false
     }
   },
@@ -50,7 +50,7 @@ export default {
         date: date,
         done: false
       })
-      this.newTodoText = ''
+      this.titleText = ''
       this.isCreating = false
     }
   }
