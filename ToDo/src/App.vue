@@ -61,7 +61,7 @@ export default {
 .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .ui.button.cancelBtn, .ui.button.closeBtn {
   font-size: 2em;
 }
-.ui.form .field>input {
+.ui.form .field>input, .ui.form input[type=text].vdatetime-input {
   font-size: 1.5em;
 }
 .header {
@@ -69,7 +69,7 @@ export default {
   overflow-wrap: break-word;
   line-height: initial;
 }
-.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .icons {
+.header, .meta, .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .icons, .ui.form input[type=text].vdatetime-input {
   margin-bottom: 1em;
 }
 .icons {
