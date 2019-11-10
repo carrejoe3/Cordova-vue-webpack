@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     addTodo (toDo) {
-      this.todos.push(toDo)
+      this.todos.unshift(toDo)
     }
   },
   data () {
