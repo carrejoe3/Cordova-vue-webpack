@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "cordova-android": "^8.1.0",
-    "vue": "^2.5.2"
+    "luxon": "^1.21.1",
+    "vue": "^2.5.2",
+    "vue-datetime": "^1.0.0-beta.10",
+    "weekstart": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

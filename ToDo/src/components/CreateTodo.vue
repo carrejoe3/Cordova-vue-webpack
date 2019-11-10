@@ -12,7 +12,7 @@
           </div>
           <div class='field'>
             <label>Date</label>
-            <input v-model="date" type='date' ref='date'>
+            <datetime v-model="date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="sendForm()">
             Create
@@ -31,7 +31,7 @@ export default {
   data () {
     return {
       titleText: '',
-      date: new Date().toISOString().slice(0, 10),
+      date: '',
       isCreating: false
     }
   },

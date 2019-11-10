@@ -25,7 +25,7 @@
           </div>
           <div class='field'>
             <label>Date</label>
-            <input type='date' v-model="todo.date" class="date">
+            <datetime v-model="todo.date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="emptyTitleText">
             Close X
