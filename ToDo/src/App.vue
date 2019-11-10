@@ -88,4 +88,8 @@ export default {
 .ui.form .field>input.errorField {
   border: 1px solid #DB2828;
 }
+input[disabled] {
+  border: none;
+  text-align: center;
+}
 </style>

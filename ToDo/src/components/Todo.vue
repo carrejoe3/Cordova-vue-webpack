@@ -14,7 +14,7 @@
           {{ todo.title }}
         </div>
         <div class="meta date">
-          {{ todo.date }}
+          <datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled></datetime>
         </div>
       </div>
       <div class="content" v-show="isEditing">
@@ -24,7 +24,7 @@
             <input type='text' v-model="todo.title" v-bind:class="{ 'errorField': emptyTitleText }">
           </div>
           <div class='field'>
-            <label>Date</label>
+            <label>Remind me on</label>
             <datetime v-model="todo.date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="emptyTitleText">

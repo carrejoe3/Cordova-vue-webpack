@@ -8,10 +8,10 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input v-model="titleText" type='text' ref='title' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText}">
+            <input v-model="titleText" type='text' ref='title' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText }">
           </div>
           <div class='field'>
-            <label>Date</label>
+            <label>Remind me on</label>
             <datetime v-model="date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="sendForm()">
