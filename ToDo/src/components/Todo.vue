@@ -32,7 +32,7 @@
           </button>
         </div>
       </div>
-      <div class='ui bottom attached green basic button' v-show="!isEditing &&todo.done">
+      <div class='ui bottom attached green basic button' v-show="!isEditing &&todo.done" v-on:click="uncompleteTodo(todo)">
           Completed
       </div>
       <div class='ui bottom attached red basic button' v-show="!isEditing && !todo.done" v-on:click="completeTodo(todo)">
@@ -68,6 +68,9 @@ export default {
     },
     completeTodo (todo) {
       this.$emit('complete-todo', todo)
+    },
+    uncompleteTodo (todo) {
+      this.$emit('uncomplete-todo', todo)
     }
   }
 }
