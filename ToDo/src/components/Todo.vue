@@ -14,7 +14,7 @@
           {{ todo.title }}
         </div>
         <div class="meta date">
-          <datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled></datetime>
+          <datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled v-show="!emptyDateTime"></datetime>
         </div>
       </div>
       <div class="content" v-show="isEditing">
@@ -54,6 +54,9 @@ export default {
   computed: {
     emptyTitleText: function () {
       return !this.todo.title.length > 0
+    },
+    emptyDateTime: function () {
+      return !this.todo.date.length > 0
     }
   },
   methods: {
