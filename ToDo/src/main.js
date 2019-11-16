@@ -6,33 +6,30 @@ import Datetime from 'vue-datetime'
 import 'vue-datetime/dist/vue-datetime.css'
 import VueCordova from 'vue-cordova'
 
-Vue.use(VueCordova)
+Vue.use(VueCordova, {
+  optionTestKey: 'optionTestValue'
+})
+
 Vue.use(Datetime)
 
 Vue.config.productionTip = false
 
+// add cordova.js only if serving the app through file://
+if (window.location.protocol === 'file:' || window.location.port === '3000') {
+  var cordovaScript = document.createElement('script')
+  cordovaScript.setAttribute('type', 'text/javascript')
+  cordovaScript.setAttribute('src', 'cordova.js')
+  document.body.appendChild(cordovaScript)
+}
+
 /* eslint-disable no-new */
-let vueApp = new Vue({
+new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  methods: {
-    sendNotification: function () {
-      Vue.cordova.plugins.notification.local.schedule({
-        title: 'My first notification',
-        text: 'Thats pretty easy...',
-        foreground: true
-      })
-      console.log('this is running')
+  data: function () {
+    return {
+      cordova: Vue.cordova
     }
-  },
-  mounted () {
-    this.sendNotification()
   }
 })
-
-document.addEventListener('deviceready', onDeviceReady, false)
-
-function onDeviceReady () {
-  vueApp.sendNotification()
-}
