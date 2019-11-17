@@ -33,3 +33,5 @@ new Vue({
     }
   }
 })
+
+console.log(Vue.cordova)

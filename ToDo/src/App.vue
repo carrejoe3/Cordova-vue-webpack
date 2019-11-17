@@ -37,9 +37,7 @@ export default {
       let savedToDos = JSON.parse(localStorage.todos)
       this.todos = savedToDos
     }
-    if (this.cordova.deviceready) {
-      document.getElementById('app').style.marginTop = '100px'
-    }
+    alert(this.cordova)
   },
   watch: {
     todos (updatedTodos) {
