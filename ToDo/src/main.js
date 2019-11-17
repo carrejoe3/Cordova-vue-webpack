@@ -26,10 +26,5 @@ if (window.location.protocol === 'file:' || window.location.port === '3000') {
 new Vue({
   el: '#app',
   components: { App },
-  template: '<App/>',
-  data: function () {
-    return {
-      cordova: Vue.cordova
-    }
-  }
+  template: '<App/>'
 })

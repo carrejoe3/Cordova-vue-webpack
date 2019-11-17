@@ -1,11 +1,17 @@
 <template>
   <div id="app">
+      <div v-if="cordova && !cordova.deviceready" class="alert">
+        The `deviceready` event has not been triggered.
+        <br>
+        Check the <a href="https://github.com/kartsims/vue-cordova#troubleshooting">Troubleshooting section</a> of vue-cordova's README.
+    </div>
     <CreateToDo v-on:add-todo="addTodo($event)"/>
     <ToDoList v-bind:todos="todos"/>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import ToDoList from './components/ToDoList'
 import CreateToDo from './components/CreateTodo'
 
@@ -22,6 +28,7 @@ export default {
   },
   data () {
     return {
+      cordova: Vue.cordova,
       todos: []
     }
   },
@@ -29,6 +36,9 @@ export default {
     if (localStorage.todos) {
       let savedToDos = JSON.parse(localStorage.todos)
       this.todos = savedToDos
+    }
+    if (this.cordova.deviceready) {
+      document.getElementById('app').style.marginTop = '100px'
     }
   },
   watch: {
