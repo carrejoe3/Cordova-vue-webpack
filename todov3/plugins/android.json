@@ -9,7 +9,17 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.joecarre.reminders"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.joecarre.reminders"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.joecarre.reminders"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.joecarre.reminders"
+    }
+  }
 }
