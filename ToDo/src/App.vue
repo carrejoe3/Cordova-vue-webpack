@@ -37,7 +37,6 @@ export default {
       let savedToDos = JSON.parse(localStorage.todos)
       this.todos = savedToDos
     }
-    alert(this.cordova)
   },
   watch: {
     todos (updatedTodos) {
