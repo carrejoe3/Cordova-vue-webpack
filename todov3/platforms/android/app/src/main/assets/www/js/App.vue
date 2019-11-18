@@ -2,20 +2,21 @@
   <div id="app">
     <!-- <CreateToDo v-on:add-todo="addTodo($event)"/>
     <ToDoList v-bind:todos="todos"/> -->
+    this is working
   </div>
 </template>
 
 <script>
 
-import ToDoList from './components/ToDoList'
-import CreateToDo from './components/CreateTodo'
+// import ToDoList from './components/ToDoList'
+// import CreateToDo from './components/CreateTodo'
 
 export default {
   name: 'App',
-  components: {
-    ToDoList,
-    CreateToDo
-  },
+  // components: {
+  //   ToDoList,
+  //   CreateToDo
+  // },
   methods: {
     addTodo (toDo) {
       this.todos.unshift(toDo)
