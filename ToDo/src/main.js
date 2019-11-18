@@ -33,15 +33,3 @@ new Vue({
     }
   }
 })
-
-window.onload = function () {
-  document.addEventListener('deviceready', onDeviceReady, true)
-  alert(JSON.stringify(this.cordova))
-}
-
-// device APIs are available
-//
-function onDeviceReady () {
-  alert('this is running')
-  // Add similar listeners for other events
-}
