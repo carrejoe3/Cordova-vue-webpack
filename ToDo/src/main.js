@@ -4,11 +4,6 @@ import Vue from 'vue'
 import App from './App'
 import Datetime from 'vue-datetime'
 import 'vue-datetime/dist/vue-datetime.css'
-import VueCordova from 'vue-cordova'
-
-Vue.use(VueCordova, {
-  optionTestKey: 'optionTestValue'
-})
 
 Vue.use(Datetime)
 
@@ -26,10 +21,5 @@ if (window.location.protocol === 'file:' || window.location.port === '3000') {
 new Vue({
   el: '#app',
   components: { App },
-  template: '<App/>',
-  data: function () {
-    return {
-      cordova: Vue.cordova
-    }
-  }
+  template: '<App/>'
 })

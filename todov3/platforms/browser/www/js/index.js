@@ -1,5 +1,3 @@
-// import App from 'App'
-
 document.addEventListener('deviceready', onDeviceReady, false);
 
 // deviceready Event Handler
