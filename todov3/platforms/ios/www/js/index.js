@@ -1,4 +1,4 @@
-var App = require('App.vue');
+// var App = require('App.vue');
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -13,9 +13,11 @@ function onDeviceReady() {
 }
 
 function setupVue() {
-    new Vue({
-        el: '#vapp',
-        components: { App },
-        template: '<App/>'
-    })
+    // new Vue({
+    //     el: '#vapp',
+    //     components: {
+    //         'App': App
+    //     },
+    //     template: '<App/>'
+    // })
 }
