@@ -1,4 +1,5 @@
-// var App = require('App.vue');
+import Vue from 'vue'
+import App from 'App'
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -13,11 +14,9 @@ function onDeviceReady() {
 }
 
 function setupVue() {
-    // new Vue({
-    //     el: '#vapp',
-    //     components: {
-    //         'App': App
-    //     },
-    //     template: '<App/>'
-    // })
+    new Vue({
+        el: '#app',
+        components: { App },
+        template: '<App/>'
+    })
 }
