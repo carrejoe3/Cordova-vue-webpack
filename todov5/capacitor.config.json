@@ -1,0 +1,8 @@
+{
+  "appId": "com.joecarre.reminders",
+  "appName": "Reminders",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist",
+  "cordova": {}
+}
