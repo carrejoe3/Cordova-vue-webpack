@@ -13,21 +13,6 @@ import CreateToDo from '../components/CreateTodo'
 
 const { LocalNotifications } = Plugins
 
-LocalNotifications.schedule({
-  notifications: [
-    {
-      title: 'Title',
-      body: 'Body',
-      id: 1,
-      schedule: { at: new Date(Date.now() + 1000) },
-      sound: null,
-      attachments: null,
-      actionTypeId: '',
-      extra: null
-    }
-  ]
-})
-
 export default {
   name: 'home',
   components: {
@@ -37,6 +22,23 @@ export default {
   methods: {
     addTodo (toDo) {
       this.todos.unshift(toDo)
+      if (toDo.date) this.scheduleNotification(toDo)
+    },
+    scheduleNotification (toDo) {
+      LocalNotifications.schedule({
+        notifications: [
+          {
+            title: toDo.title,
+            body: 'Don\'t forget! :)',
+            id: 1,
+            schedule: { at: toDo.date },
+            sound: null,
+            attachments: null,
+            actionTypeId: '',
+            extra: null
+          }
+        ]
+      })
     }
   },
   data () {
