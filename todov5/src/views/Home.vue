@@ -110,5 +110,6 @@ export default {
 input[disabled] {
   border: none;
   text-align: center;
+  background: none;
 }
 </style>
