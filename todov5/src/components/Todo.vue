@@ -14,7 +14,7 @@
           {{ todo.title }}
         </div>
         <div class="meta date">
-          <ion-datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled v-show="!emptyDateTime"></ion-datetime>
+          <datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled v-show="!emptyDateTime"></datetime>
         </div>
       </div>
       <div class="content" v-show="isEditing">
@@ -25,7 +25,7 @@
           </div>
           <div class='field'>
             <label>Remind me on</label>
-            <ion-datetime v-model="todo.date" type="datetime"></ion-datetime>
+            <datetime v-model="todo.date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="emptyTitleText">
             Close X
