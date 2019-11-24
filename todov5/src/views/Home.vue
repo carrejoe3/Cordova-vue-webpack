@@ -21,6 +21,7 @@ export default {
   },
   methods: {
     addTodo (toDo) {
+      toDo.id = this.todos.length
       this.todos.unshift(toDo)
       if (toDo.date) this.scheduleNotification(toDo)
     },
@@ -30,7 +31,7 @@ export default {
           {
             title: toDo.title,
             body: 'Don\'t forget! :)',
-            id: 1,
+            id: toDo.id,
             schedule: { at: toDo.date },
             sound: null,
             attachments: null,

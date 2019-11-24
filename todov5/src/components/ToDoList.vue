@@ -9,6 +9,7 @@
 <script type = "text/javascript" >
 
 import Todo from './Todo'
+import { LocalNotifications } from '@capacitor/core'
 
 export default {
   props: ['todos'],
@@ -17,6 +18,8 @@ export default {
   },
   methods: {
     deleteTodo (todo) {
+      let notificationIds = [todo.id]
+      LocalNotifications.cancel(notificationIds)
       const todoIndex = this.todos.indexOf(todo)
       this.todos.splice(todoIndex, 1)
     },
