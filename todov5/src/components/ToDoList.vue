@@ -34,8 +34,16 @@ export default {
       localStorage.todos = JSON.stringify(this.todos)
     },
     removeNotification (todo) {
-      let notificationIds = [todo.id]
-      LocalNotifications.cancel(notificationIds)
+      LocalNotifications.getPending().then(function (result) {
+        for (let i in result) {
+          alert(JSON.stringify(result[i]))
+          if (result[i] === todo.id) {
+            LocalNotifications.cancel(todo.id).then(function (result) {
+              console.log(result)
+            })
+          }
+        }
+      })
     }
   }
 }

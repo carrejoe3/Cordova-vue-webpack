@@ -8,7 +8,7 @@
         <div class='ui form'>
           <div class='field'>
             <label>Title</label>
-            <input v-model="titleText" type='text' ref='title' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText }">
+            <input v-model="titleText" type='text' ref='titleInput' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText }">
           </div>
           <div class='field'>
             <label>Remind me on</label>
@@ -27,6 +27,9 @@
 </template>
 
 <script>
+
+import Vue from 'vue'
+
 export default {
   data () {
     return {
@@ -43,6 +46,9 @@ export default {
   methods: {
     openForm () {
       this.isCreating = true
+      Vue.nextTick(() => {
+        this.$refs.titleInput.focus()
+      })
     },
     closeForm () {
       this.isCreating = false
