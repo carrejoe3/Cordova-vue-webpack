@@ -18,12 +18,12 @@ export default {
   },
   methods: {
     deleteTodo (todo) {
-      let notificationIds = [todo.id]
-      LocalNotifications.cancel(notificationIds)
+      this.removeNotification(todo)
       const todoIndex = this.todos.indexOf(todo)
       this.todos.splice(todoIndex, 1)
     },
     completeTodo (todo) {
+      this.removeNotification(todo)
       const todoIndex = this.todos.indexOf(todo)
       this.todos[todoIndex].done = true
       localStorage.todos = JSON.stringify(this.todos)
@@ -32,6 +32,10 @@ export default {
       const todoIndex = this.todos.indexOf(todo)
       this.todos[todoIndex].done = false
       localStorage.todos = JSON.stringify(this.todos)
+    },
+    removeNotification (todo) {
+      let notificationIds = [todo.id]
+      LocalNotifications.cancel(notificationIds)
     }
   }
 }
