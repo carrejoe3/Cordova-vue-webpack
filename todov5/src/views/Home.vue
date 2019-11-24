@@ -6,12 +6,9 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import { Plugins } from '@capacitor/core'
+
 import ToDoList from '../components/ToDoList'
 import CreateToDo from '../components/CreateTodo'
-
-const { LocalNotifications } = Plugins
 
 export default {
   name: 'home',
@@ -26,20 +23,7 @@ export default {
       if (toDo.date) this.scheduleNotification(toDo)
     },
     scheduleNotification (toDo) {
-      LocalNotifications.schedule({
-        notifications: [
-          {
-            title: toDo.title,
-            body: 'Don\'t forget! :)',
-            id: toDo.id,
-            schedule: { at: toDo.date },
-            sound: null,
-            attachments: null,
-            actionTypeId: '',
-            extra: null
-          }
-        ]
-      })
+      // schedule notification code here
     }
   },
   data () {

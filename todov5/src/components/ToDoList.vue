@@ -9,7 +9,6 @@
 <script type = "text/javascript" >
 
 import Todo from './Todo'
-import { LocalNotifications } from '@capacitor/core'
 
 export default {
   props: ['todos'],
@@ -34,16 +33,7 @@ export default {
       localStorage.todos = JSON.stringify(this.todos)
     },
     removeNotification (todo) {
-      LocalNotifications.getPending().then(function (result) {
-        for (let i in result) {
-          alert(JSON.stringify(result[i]))
-          if (result[i] === todo.id) {
-            LocalNotifications.cancel(todo.id).then(function (result) {
-              console.log(result)
-            })
-          }
-        }
-      })
+      // remove notification code here
     }
   }
 }
