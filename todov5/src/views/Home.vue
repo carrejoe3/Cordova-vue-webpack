@@ -9,6 +9,7 @@
 
 import ToDoList from '../components/ToDoList'
 import CreateToDo from '../components/CreateTodo'
+import { LocalNotifications } from '@ionic-native/local-notifications'
 
 export default {
   name: 'home',
@@ -23,7 +24,10 @@ export default {
       if (toDo.date) this.scheduleNotification(toDo)
     },
     scheduleNotification (toDo) {
-      // schedule notification code here
+      LocalNotifications.schedule({
+        id: 1,
+        text: toDo.title
+      })
     }
   },
   data () {
