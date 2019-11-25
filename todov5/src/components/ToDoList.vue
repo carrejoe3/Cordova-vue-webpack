@@ -9,6 +9,7 @@
 <script type = "text/javascript" >
 
 import Todo from './Todo'
+import { LocalNotifications } from '@ionic-native/local-notifications'
 
 export default {
   props: ['todos'],
@@ -33,7 +34,7 @@ export default {
       localStorage.todos = JSON.stringify(this.todos)
     },
     removeNotification (todo) {
-      // remove notification code here
+      LocalNotifications.cancel(todo.id)
     }
   }
 }
