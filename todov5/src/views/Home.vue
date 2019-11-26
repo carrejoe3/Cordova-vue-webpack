@@ -25,8 +25,9 @@ export default {
     },
     scheduleNotification (toDo) {
       LocalNotifications.schedule({
-        id: 1,
-        text: toDo.title
+        id: toDo.id,
+        text: toDo.title,
+        at: new Date(toDo.date)
       })
     }
   },
