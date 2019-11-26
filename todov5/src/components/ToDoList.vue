@@ -32,6 +32,7 @@ export default {
       const todoIndex = this.todos.indexOf(todo)
       this.todos[todoIndex].done = false
       localStorage.todos = JSON.stringify(this.todos)
+      this.$emit('schedule-todo', todo)
     },
     removeNotification (todo) {
       LocalNotifications.cancel(todo.id)
