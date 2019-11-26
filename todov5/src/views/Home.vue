@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <CreateToDo v-on:add-todo="addTodo($event)"/>
-    <ToDoList v-bind:todos="todos" v-on:schedule-todo="scheduleNotification($event)"/>
+    <ToDoList v-bind:todos="todos" v-on:schedule-notification="scheduleNotification($event)"/>
   </div>
 </template>
 

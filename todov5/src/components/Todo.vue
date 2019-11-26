@@ -3,7 +3,7 @@
     <div class='ui segment'>
       <div class='content' v-show="!isEditing">
         <div class='icons'>
-          <span class='right floated edit icon' v-on:click="showForm">
+          <span class='right floated edit icon' v-on:click="showForm(); removeNotification(todo);">
             <i class='edit icon'></i>
           </span>
           <span class='right floated trash icon' v-on:click="deleteTodo(todo)">
@@ -27,7 +27,7 @@
             <label>Remind me on</label>
             <datetime v-model="todo.date" type="datetime"></datetime>
           </div>
-          <button class='ui basic blue button closeBtn' v-on:click="hideForm" :disabled="emptyTitleText">
+          <button class='ui basic blue button closeBtn' v-on:click="hideForm(); scheduleNotification(todo);" :disabled="emptyTitleText">
             Close X
           </button>
         </div>
@@ -74,6 +74,12 @@ export default {
     },
     uncompleteTodo (todo) {
       this.$emit('uncomplete-todo', todo)
+    },
+    removeNotification (todo) {
+      this.$emit('remove-notification', todo)
+    },
+    scheduleNotification (todo) {
+      this.$emit('schedule-notification', todo)
     }
   }
 }
