@@ -45,6 +45,11 @@ export default {
           href: '/',
           title: 'Home',
           icon: 'fa fa-user'
+        },
+        {
+          href: '/Categories',
+          title: 'Categories',
+          icon: 'fa fa-user'
         }
       ]
     }
