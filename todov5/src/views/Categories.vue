@@ -1,6 +1,9 @@
 <template>
   <div id="categories">
     <sidebar-menu :menu="menu" />
+    <div class='ui bottom attached green basic button' v-on:click="addCategory()">
+        Add
+    </div>
   </div>
 </template>
 
@@ -15,9 +18,13 @@ Vue.use(VueSidebarMenu)
 export default {
   name: 'home',
   methods: {
+    addCategory: () => {
+      alert('add category por favor')
+    }
   },
   data () {
     return {
+      categories: [],
       menu: [
         {
           href: '/',
