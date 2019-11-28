@@ -39,7 +39,7 @@ export default {
     }
   },
   computed: {
-    emptyTitleText: function () {
+    emptyTitleText: () => {
       return !this.titleText.length > 0
     }
   },

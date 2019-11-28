@@ -52,10 +52,10 @@ export default {
     }
   },
   computed: {
-    emptyTitleText: function () {
+    emptyTitleText: () => {
       return !this.todo.title.length > 0
     },
-    emptyDateTime: function () {
+    emptyDateTime: () => {
       return !this.todo.date.length > 0
     }
   },
