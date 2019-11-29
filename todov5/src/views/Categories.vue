@@ -18,7 +18,7 @@ Vue.use(VueSidebarMenu)
 export default {
   name: 'home',
   methods: {
-    addCategory: () => {
+    addCategory () {
       alert('add category por favor')
     }
   },
