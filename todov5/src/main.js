@@ -5,6 +5,7 @@ import store from './store'
 import Datetime from 'vue-datetime'
 import 'vue-datetime/dist/vue-datetime.css'
 import 'semantic-ui-css/semantic.min.css'
+import '../src/assets/styles/global.scss'
 
 Vue.use(Datetime)
 Vue.config.productionTip = false
