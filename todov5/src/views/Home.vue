@@ -68,16 +68,7 @@ export default {
 }
 </script>
 
-<style>
-#home {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #272822;
-  margin-top: 60px;
-  font-size: 1em;
-}
+<style lang="scss">
 .container {
   margin-bottom: 2%;
 }
@@ -85,6 +76,15 @@ export default {
   font-size: 2em;
 }
 .ui.button {
+  font-size: 1em;
+}
+#home {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #272822;
+  margin-top: 60px;
   font-size: 1em;
 }
 .ui.form .field>label, .ui.form .field>input, .ui.button.createBtn, .ui.button.cancelBtn, .ui.button.closeBtn {
