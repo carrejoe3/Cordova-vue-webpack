@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    todos: [],
+    todos: JSON.parse(window.localStorage.getItem('todos')),
     categories: []
   },
   mutations: {
@@ -21,5 +21,10 @@ export default new Vuex.Store({
     uncompleteTodo (state, todo) {
       state.todos[state.todos.indexOf(todo)].done = false
     }
-  }
+  },
+  plugins: [store => {
+    store.subscribe((mutation, { todos }) => {
+      window.localStorage.setItem('todos', JSON.stringify(todos))
+    })
+  }]
 })
