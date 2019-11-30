@@ -27,7 +27,7 @@
             <label>Remind me on</label>
             <datetime v-model="todo.date" type="datetime"></datetime>
           </div>
-          <button class='ui basic blue button closeBtn' v-on:click="hideForm(); scheduleNotification(todo);" :disabled="emptyTitleText">
+          <button class='ui basic blue button closeBtn' v-on:click="hideForm(todo); scheduleNotification(todo);" :disabled="emptyTitleText">
             Close X
           </button>
         </div>
@@ -71,7 +71,8 @@ export default {
     showForm () {
       this.isEditing = true
     },
-    hideForm () {
+    hideForm (todo) {
+      this.$store.commit('editTodo', todo)
       this.isEditing = false
     },
     completeTodo (todo) {
