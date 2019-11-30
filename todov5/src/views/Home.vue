@@ -8,14 +8,9 @@
 
 <script>
 
-import Vue from 'vue'
 import ToDoList from '../components/ToDoList'
 import CreateToDo from '../components/CreateTodo'
 import { LocalNotifications } from '@ionic-native/local-notifications'
-import VueSidebarMenu from 'vue-sidebar-menu'
-import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
-
-Vue.use(VueSidebarMenu)
 
 export default {
   name: 'home',
