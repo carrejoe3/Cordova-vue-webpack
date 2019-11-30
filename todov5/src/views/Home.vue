@@ -2,19 +2,19 @@
   <div id="home">
     <sidebar-menu :menu="menu" />
     <CreateToDo />
-    <!-- <ToDoList v-bind:todos="todos" v-on:schedule-notification="scheduleNotification($event)"/> -->
+    <ToDoList />
   </div>
 </template>
 
 <script>
 
-// import ToDoList from '../components/ToDoList'
+import ToDoList from '../components/ToDoList'
 import CreateToDo from '../components/CreateTodo'
 
 export default {
   name: 'home',
   components: {
-    // ToDoList,
+    ToDoList,
     CreateToDo
   },
   data () {
@@ -33,11 +33,6 @@ export default {
       ]
     }
   }
-  // watch: {
-  //   todos (updatedTodos) {
-  //     localStorage.todos = JSON.stringify(updatedTodos)
-  //   }
-  // }
 }
 </script>
 

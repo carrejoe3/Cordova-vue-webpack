@@ -8,6 +8,9 @@ export const NotificationMethods = {
         text: toDo.title,
         at: new Date(toDo.date)
       })
+    },
+    removeNotification (todo) {
+      LocalNotifications.cancel(todo.id)
     }
   }
 }

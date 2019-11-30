@@ -43,8 +43,12 @@
 </template>
 
 <script type="text/javascript">
+
+import { NotificationMethods } from './mixins/mixins.js'
+
 export default {
   props: ['todo'],
+  mixins: [NotificationMethods],
   data () {
     return {
       isEditing: false,
@@ -61,7 +65,8 @@ export default {
   },
   methods: {
     deleteTodo (todo) {
-      this.$emit('delete-todo', todo)
+      this.removeNotification(todo)
+      this.$store.commit('removeTodo', todo)
     },
     showForm () {
       this.isEditing = true
@@ -70,16 +75,12 @@ export default {
       this.isEditing = false
     },
     completeTodo (todo) {
-      this.$emit('complete-todo', todo)
+      this.removeNotification(todo)
+      this.$store.commit('completeTodo', todo)
     },
     uncompleteTodo (todo) {
-      this.$emit('uncomplete-todo', todo)
-    },
-    removeNotification (todo) {
-      this.$emit('remove-notification', todo)
-    },
-    scheduleNotification (todo) {
-      this.$emit('schedule-notification', todo)
+      if (todo.date) this.scheduleNotification(todo)
+      this.$store.commit('uncompleteTodo', todo)
     }
   }
 }

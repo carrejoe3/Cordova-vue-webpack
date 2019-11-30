@@ -14,6 +14,12 @@ export default new Vuex.Store({
     },
     removeTodo (state, todo) {
       state.todos.splice(state.todos.indexOf(todo), 1)
+    },
+    completeTodo (state, todo) {
+      state.todos[state.todos.indexOf(todo)].done = true
+    },
+    uncompleteTodo (state, todo) {
+      state.todos[state.todos.indexOf(todo)].done = false
     }
   }
 })
