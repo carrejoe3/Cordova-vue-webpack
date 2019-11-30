@@ -1,8 +1,10 @@
 <template>
   <div id="categories">
     <sidebar-menu :menu="menu" />
-    <div class='ui bottom attached green basic button' v-on:click="addCategory()">
-        Add
+    <div class='ui container'>
+      <div class='ui bottom attached green basic button' v-on:click="addCategory()">
+          Add
+      </div>
     </div>
   </div>
 </template>
