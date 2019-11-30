@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -10,7 +9,6 @@ import 'semantic-ui-css/semantic.min.css'
 import '../src/assets/styles/global.scss'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
-Vue.use(Vuex)
 Vue.use(Datetime)
 Vue.use(VueSidebarMenu)
 Vue.config.productionTip = false

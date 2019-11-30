@@ -14,7 +14,7 @@
             <label>Remind me on</label>
             <datetime v-model="date" type="datetime"></datetime>
           </div>
-          <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="sendForm()">
+          <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="addToDo()">
             Create
           </button>
           <button class='ui basic red button cancelBtn' v-on:click="closeForm">
@@ -29,8 +29,10 @@
 <script>
 
 import Vue from 'vue'
+import { NotificationMethods } from './mixins/mixins.js'
 
 export default {
+  mixins: [NotificationMethods],
   data () {
     return {
       titleText: '',
@@ -53,14 +55,15 @@ export default {
     closeForm () {
       this.isCreating = false
     },
-    sendForm () {
-      const title = this.titleText
-      const date = this.date
-      this.$emit('add-todo', {
-        title: title,
-        date: date,
+    addToDo () {
+      const toDo = {
+        id: this.$store.state.todos.length,
+        title: this.titleText,
+        date: this.date,
         done: false
-      })
+      }
+      this.$store.commit('addTodo', toDo)
+      if (toDo.date) this.scheduleNotification(toDo)
       this.titleText = ''
       this.isCreating = false
     }

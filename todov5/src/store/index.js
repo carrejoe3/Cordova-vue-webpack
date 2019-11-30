@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    todos: [],
+    categories: []
   },
   mutations: {
-  },
-  actions: {
-  },
-  modules: {
+    addTodo (state, todo) {
+      state.todos.push(todo)
+    },
+    removeTodo (state, todo) {
+      state.todos.splice(state.todos.indexOf(todo), 1)
+    }
   }
 })
