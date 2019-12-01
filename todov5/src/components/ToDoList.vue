@@ -14,11 +14,6 @@ export default {
   components: {
     Todo
   },
-  methods: {
-    completeTodo (todo) {
-      this.$store.commit('completeTodo', todo)
-    }
-  },
   computed: {
     todos () {
       return this.$store.state.todos

@@ -38,7 +38,11 @@ export default {
       this.isCreating = false
     },
     addCategory () {
-      this.$store.commit('addCategory', this.categoryName)
+      const category = {
+        id: this.$store.state.categories.length,
+        name: this.categoryName
+      }
+      this.$store.commit('addCategory', category)
       this.categoryName = ''
       this.isCreating = false
     }

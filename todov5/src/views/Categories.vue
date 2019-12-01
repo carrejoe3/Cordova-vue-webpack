@@ -2,17 +2,20 @@
   <div id="categories">
     <sidebar-menu :menu="menu" />
     <CreateCategory />
+    <CategoryList />
   </div>
 </template>
 
 <script>
 
 import CreateCategory from '../components/CreateCategory'
+import CategoryList from '../components/CategoryList'
 
 export default {
   name: 'categories',
   components: {
-    CreateCategory
+    CreateCategory,
+    CategoryList
   },
   methods: {
   },

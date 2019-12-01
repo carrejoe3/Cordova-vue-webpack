@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     todos: JSON.parse(window.localStorage.getItem('todos')),
+    // categories: JSON.parse(window.localStorage.getItem('categories'))
     categories: []
   },
   mutations: {
@@ -26,11 +27,20 @@ export default new Vuex.Store({
     },
     addCategory (state, category) {
       state.categories.push(category)
+    },
+    removeCategory (state, category) {
+      state.categories.splice(state.categories.indexOf(category), 1)
+    },
+    editCategory (state, category) {
+      state.categories[state.categories.indexOf(category)] = category
     }
   },
   plugins: [store => {
     store.subscribe((mutation, { todos }) => {
       window.localStorage.setItem('todos', JSON.stringify(todos))
+    })
+    store.subscribe((mutation, { categories }) => {
+      window.localStorage.setItem('categories', JSON.stringify(categories))
     })
   }]
 })
