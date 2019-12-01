@@ -1,19 +1,22 @@
+body {
+  line-height: 1.15;
+}
 .ui.container {
   margin-bottom: 2%;
   margin-left: 4.5em !important;
 }
 .ui.segment {
-	font-size: 2em;
+  font-size: 2em;
 }
 .ui.button.icon {
-	font-size: 2em;
+  font-size: 2em;
 }
 .ui.button {
-	font-size: 1em;
-	background: none;
-	margin-right: 0px;
-	margin-left: 0px;
-	width: 100%;
+  font-size: 1em;
+  background: none;
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
 }
 @media only screen and (max-width: 991px) and (min-width: 768px) {
   .ui.container {
@@ -30,64 +33,65 @@
     width: 94.5%;
   }
 }
-#home, #categories {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #272822;
-	margin-top: 1em;
-	font-size: 1em;
+#home,
+#categories {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #272822;
+  margin-top: 1em;
+  font-size: 1em;
 }
 .ui.form {
-	.field {
-		>label {
-			font-size: 2em;
-			margin-bottom: 1em;
-		}
-		>input {
-			font-size: 2em;
-			font-size: 1.5em;
-			margin-bottom: 1em;
-		}
-		>input.errorField {
-			border: 1px solid #db2828;
-		}
-	}
-	input[type="text"].vdatetime-input {
-		font-size: 1.5em;
-		margin-bottom: 1em;
-	}
+  .field {
+    > label {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+    > input {
+      font-size: 2em;
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+    > input.errorField {
+      border: 1px solid #db2828;
+    }
+  }
+  input[type="text"].vdatetime-input {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+  }
 }
 .ui.button.createBtn {
-	font-size: 2em;
-	margin-bottom: 1em;
+  font-size: 2em;
+  margin-bottom: 1em;
 }
 .ui.button.cancelBtn {
-	font-size: 2em;
+  font-size: 2em;
 }
 .ui.button.closeBtn {
-	font-size: 2em;
+  font-size: 2em;
 }
 .header {
-	font-weight: 700;
-	overflow-wrap: break-word;
-	line-height: initial;
-	margin-bottom: 1em;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  line-height: initial;
+  margin-bottom: 1em;
 }
 .meta {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 .icons {
-	margin-bottom: 1em;
-	display: flex;
-	justify-content: space-between;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
 }
 .date {
-	font-size: 0.65em;
+  font-size: 0.65em;
 }
 input[disabled] {
-	border: none;
-	text-align: center;
-	background: none;
+  border: none;
+  text-align: center;
+  background: none;
 }
