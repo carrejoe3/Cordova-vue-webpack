@@ -13,6 +13,9 @@
         <div class='header'>
           {{ todo.title }}
         </div>
+        <div class="meta category">
+          {{ todo.category }}
+        </div>
         <div class="meta date">
           <datetime v-model="todo.date" type="datetime" input-class="disabledDateTime" disabled v-show="!emptyDateTime"></datetime>
         </div>
@@ -22,6 +25,12 @@
           <div class='field'>
             <label>Title</label>
             <input type='text' v-model="todo.title" v-bind:class="{ 'errorField': emptyTitleText }">
+          </div>
+          <div class='field'>
+            <label>Category</label>
+            <select v-model="todo.category">
+              <option v-for="category in categories" :key="category.id">{{category.name}}</option>
+            </select>
           </div>
           <div class='field'>
             <label>Remind me on</label>
@@ -61,6 +70,9 @@ export default {
     },
     emptyDateTime: function () {
       return !this.todo.date.length > 0
+    },
+    categories: function () {
+      return this.$store.state.categories
     }
   },
   methods: {

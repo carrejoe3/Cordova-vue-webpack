@@ -11,14 +11,14 @@
             <input v-model="titleText" type='text' ref='titleInput' defaultValue="" v-bind:class="{ 'errorField': emptyTitleText }">
           </div>
           <div class='field'>
-            <label>Remind me on</label>
-            <datetime v-model="date" type="datetime"></datetime>
-          </div>
-          <div class='field'>
             <label>Category</label>
             <select v-model="category">
-              <option v-for="category in categories" :key="category.id" value="category">{{category.name}}</option>
+              <option v-for="category in categories" :key="category.id">{{category.name}}</option>
             </select>
+          </div>
+          <div class='field'>
+            <label>Remind me on</label>
+            <datetime v-model="date" type="datetime"></datetime>
           </div>
           <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="addToDo()">
             Create
