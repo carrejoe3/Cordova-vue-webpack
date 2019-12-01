@@ -1,6 +1,14 @@
+@import "src/assets/styles/colours";
+
 body {
   line-height: 1.15;
-  background: #F9FCFF;
+  background: $off-white;
+}
+.drop-shadow {
+  background: $white !important;
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
 }
 .ui.container {
   margin-bottom: 2%;
@@ -10,6 +18,9 @@ body {
 }
 .ui.button.icon {
   font-size: 2em;
+  i {
+    color: $light-grey;
+  }
 }
 .ui.button {
   font-size: 1em;
@@ -40,7 +51,7 @@ body {
       margin-bottom: 1em;
     }
     > input.errorField {
-      border: 1px solid #db2828;
+      border: 1px solid $warning;
     }
   }
   input[type="text"].vdatetime-input {
@@ -71,6 +82,9 @@ body {
   margin-bottom: 1em;
   display: flex;
   justify-content: space-between;
+  i {
+    color: $light-grey;
+  }
 }
 .date, .category {
   font-size: 0.65em;

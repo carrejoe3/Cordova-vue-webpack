@@ -1,6 +1,6 @@
 <template>
   <div class="ui container">
-    <div class='ui segment'>
+    <div class='ui segment drop-shadow'>
       <div class='content' v-show="!isEditing">
         <div class='icons'>
           <span class='right floated edit icon' v-on:click="showForm()">
