@@ -14,6 +14,12 @@
             <label>Remind me on</label>
             <datetime v-model="date" type="datetime"></datetime>
           </div>
+          <div class='field'>
+            <label>Category</label>
+            <select v-model="category">
+              <option v-for="category in categories" :key="category.id" value="category">{{category.name}}</option>
+            </select>
+          </div>
           <button class='ui basic blue button createBtn' :disabled="emptyTitleText" v-on:click="addToDo()">
             Create
           </button>
@@ -37,12 +43,16 @@ export default {
     return {
       titleText: '',
       date: '',
+      category: '',
       isCreating: false
     }
   },
   computed: {
     emptyTitleText: function () {
       return !this.titleText.length > 0
+    },
+    categories: function () {
+      return this.$store.state.categories
     }
   },
   methods: {
@@ -59,6 +69,7 @@ export default {
       const toDo = {
         id: this.$store.state.todos.length,
         title: this.titleText,
+        category: this.category,
         date: this.date,
         done: false
       }
