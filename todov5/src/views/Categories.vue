@@ -25,12 +25,12 @@ export default {
         {
           href: '/',
           title: 'Home',
-          icon: 'fa fa-user'
+          icon: 'fas fa-home'
         },
         {
           href: '/Categories',
           title: 'Categories',
-          icon: 'fa fa-user'
+          icon: 'fas fa-shapes'
         }
       ]
     }

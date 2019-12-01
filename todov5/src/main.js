@@ -8,6 +8,7 @@ import 'vue-datetime/dist/vue-datetime.css'
 import 'semantic-ui-css/semantic.min.css'
 import '../src/assets/styles/global.scss'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 Vue.use(Datetime)
 Vue.use(VueSidebarMenu)
