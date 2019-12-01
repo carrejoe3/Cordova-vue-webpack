@@ -17,15 +17,6 @@ export default {
   methods: {
     completeTodo (todo) {
       this.$store.commit('completeTodo', todo)
-    },
-    uncompleteTodo (todo) {
-      const todoIndex = this.todos.indexOf(todo)
-      this.todos[todoIndex].done = false
-      localStorage.todos = JSON.stringify(this.todos)
-      this.$emit('schedule-notification', todo)
-    },
-    scheduleNotification (todo) {
-      this.$emit('schedule-notification', todo)
     }
   },
   computed: {
