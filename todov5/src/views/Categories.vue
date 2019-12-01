@@ -1,36 +1,23 @@
 <template>
   <div id="categories">
     <sidebar-menu :menu="menu" />
-    <div class='ui container'>
-      <div class="ui segment">
-        <div class="content">
-          <div class='ui form'>
-            <div class='field'>
-              <label>Name</label>
-              <input type='text' v-model="categoryName" v-bind:class="{ 'errorField': emptyNameText }">
-            </div>
-            <button class='ui basic blue button closeBtn' v-on:click="addCategory" :disabled="emptyNameText">
-              Create
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <CreateCategory />
   </div>
 </template>
 
 <script>
 
+import CreateCategory from '../components/CreateCategory'
+
 export default {
-  name: 'home',
+  name: 'categories',
+  components: {
+    CreateCategory
+  },
   methods: {
-    addCategory () {
-      this.$store.commit('addCategory', this.categoryName)
-    }
   },
   data () {
     return {
-      categoryName: '',
       menu: [
         {
           href: '/',
@@ -48,14 +35,7 @@ export default {
   computed: {
     categories () {
       return this.$store.state.categories
-    },
-    emptyNameText () {
-      return !this.categoryName.length > 0
     }
   }
 }
 </script>
-
-<style>
-
-</style>
