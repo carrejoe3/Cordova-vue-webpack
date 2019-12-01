@@ -1,30 +1,31 @@
 <template>
 <ion-app>
-   <sidebar-menu :menu="menu" :collapsed="collapsed"/>
-   <router-view></router-view>
+  <router-view></router-view>
+  <div id="bottomNavBar">
+    <router-link :to="{name: 'home'}">
+      <button class="menuBtn"><i class="fa fa-home"></i></button>
+    </router-link>
+    <router-link :to="{name: 'categories'}">
+      <button class="menuBtn"><i class="fa fa-stream"></i></button>
+    </router-link>
+  </div>
 </ion-app>
 </template>
 
-<script>
+<style lang="scss" scoped>
 
-export default {
-  data () {
-    return {
-      menu: [
-        {
-          href: '/',
-          title: 'Home',
-          icon: 'fas fa-home'
-        },
-        {
-          href: '/Categories',
-          title: 'Categories',
-          icon: 'fa fa-shapes'
-        }
-      ],
-      collapsed: true
-    }
-  }
+#bottomNavBar {
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  background: #ffffff;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-</script>
+.menuBtn {
+  font-size: 2em;
+}
+
+</style>
