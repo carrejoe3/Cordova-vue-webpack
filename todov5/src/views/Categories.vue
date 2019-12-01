@@ -1,6 +1,5 @@
 <template>
   <div id="categories">
-    <sidebar-menu :menu="menu" />
     <CreateCategory />
     <CategoryList />
   </div>
@@ -19,26 +18,11 @@ export default {
   },
   methods: {
   },
-  data () {
-    return {
-      menu: [
-        {
-          href: '/',
-          title: 'Home',
-          icon: 'fas fa-home'
-        },
-        {
-          href: '/Categories',
-          title: 'Categories',
-          icon: 'fas fa-shapes'
-        }
-      ]
-    }
-  },
   computed: {
     categories () {
       return this.$store.state.categories
     }
   }
 }
+
 </script>
