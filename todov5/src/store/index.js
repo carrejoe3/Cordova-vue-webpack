@@ -23,6 +23,9 @@ export default new Vuex.Store({
     },
     uncompleteTodo (state, todo) {
       state.todos[state.todos.indexOf(todo)].done = false
+    },
+    addCategory (state, category) {
+      state.categories.push(category)
     }
   },
   plugins: [store => {
