@@ -3,10 +3,10 @@
   <router-view></router-view>
   <div id="bottomNavBar" class="drop-shadow">
     <router-link :to="{name: 'home'}">
-      <button class="menuBtn"><i class="fa fa-home"></i></button>
+      <div class="menuBtn"><i class="fa fa-home"></i></div>
     </router-link>
     <router-link :to="{name: 'categories'}">
-      <button class="menuBtn"><i class="fa fa-stream"></i></button>
+      <div class="menuBtn"><i class="fa fa-stream"></i></div>
     </router-link>
   </div>
 </ion-app>
