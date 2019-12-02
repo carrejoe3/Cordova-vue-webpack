@@ -5,8 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    todos: JSON.parse(window.localStorage.getItem('todos')),
-    categories: JSON.parse(window.localStorage.getItem('categories'))
+    todos: JSON.parse(window.localStorage.getItem('todos')) == null ? [] : JSON.parse(window.localStorage.getItem('todos')),
+    categories: JSON.parse(window.localStorage.getItem('categories')) == null ? [] : JSON.parse(window.localStorage.getItem('categories'))
   },
   mutations: {
     addTodo (state, todo) {
