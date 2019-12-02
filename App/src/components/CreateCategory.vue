@@ -1,8 +1,5 @@
 <template>
   <div class='ui container'>
-    <button class='ui basic button icon drop-shadow' v-on:click="openForm" v-show="!isCreating">
-      <i class='plus icon'></i>
-    </button>
     <div class="ui segment drop-shadow" v-show="isCreating">
       <div class="content">
         <div class='ui form'>
@@ -19,6 +16,9 @@
         </div>
       </div>
     </div>
+    <button class='ui basic button icon circleBtn drop-shadow' v-on:click="openForm" v-show="!isCreating">
+      <i class='plus icon'></i>
+    </button>
   </div>
 </template>
 
