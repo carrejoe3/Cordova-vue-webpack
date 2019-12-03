@@ -8,6 +8,12 @@ export default new Vuex.Store({
     todos: JSON.parse(window.localStorage.getItem('todos')) == null ? [] : JSON.parse(window.localStorage.getItem('todos')),
     categories: JSON.parse(window.localStorage.getItem('categories')) == null ? [] : JSON.parse(window.localStorage.getItem('categories'))
   },
+  getters: {
+    sortedTodos (state) {
+      state.todos.sort((a, b) => new Date(a.date) - new Date(b.date))
+      return state.todos
+    }
+  },
   mutations: {
     addTodo (state, todo) {
       state.todos.push(todo)
