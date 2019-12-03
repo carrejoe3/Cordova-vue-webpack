@@ -1,15 +1,22 @@
 <template>
   <div class='ui container'>
+<<<<<<< Updated upstream
     <button class='ui basic button icon drop-shadow' v-on:click="openForm" v-show="!isCreating">
+=======
+    <button class='ui basic button icon circleBtn drop-shadow' v-on:click="openForm" v-show="!isCreating && !selectingCategory">
+>>>>>>> Stashed changes
       <i class='plus icon'></i>
     </button>
-    <div class="ui segment drop-shadow" v-show="isCreating">
+    <div class="ui segment drop-shadow" v-show="isCreating && !selectingCategory">
       <div class="content">
         <div class='ui form'>
           <div class='field'>
             <label>Name</label>
             <input type='text' ref="categoryNameInput" v-model="categoryName" v-bind:class="{ 'errorField': emptyNameText }">
           </div>
+          <button class='ui basic blue button createBtn' v-on:click="toggleIconSelector">
+            Select icon
+          </button>
           <button class='ui basic blue button createBtn' v-on:click="addCategory" :disabled="emptyNameText">
             Create
           </button>
@@ -19,14 +26,21 @@
         </div>
       </div>
     </div>
+    <div v-show="isCreating && selectingCategory">
+      <font-awesome-picker v-on:selectIcon="toggleIconSelector"></font-awesome-picker>
+    </div>
   </div>
 </template>
 
 <script>
 
 import Vue from 'vue'
+import { fontAwesomePicker } from 'font-awesome-picker'
 
 export default {
+  components: {
+    'font-awesome-picker': fontAwesomePicker
+  },
   methods: {
     openForm () {
       this.isCreating = true
@@ -45,12 +59,16 @@ export default {
       this.$store.commit('addCategory', category)
       this.categoryName = ''
       this.isCreating = false
+    },
+    toggleIconSelector () {
+      this.selectingCategory = !this.selectingCategory
     }
   },
   data () {
     return {
       categoryName: '',
-      isCreating: false
+      isCreating: false,
+      selectingCategory: false
     }
   },
   computed: {
