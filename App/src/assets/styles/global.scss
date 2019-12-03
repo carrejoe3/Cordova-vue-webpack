@@ -12,6 +12,28 @@ body {
 }
 .ui.container {
   margin-bottom: 2%;
+  .ui.basic.button.circleBtn {
+    width: 2em;
+    height: 2em;
+    padding: 6px 0px;
+    border-radius: 1em;
+    line-height: 1.42857;
+    z-index: 1;
+    background: $light-blue !important;
+    .icon {
+      color: $white;
+    }
+  }
+  .addBtnContainer {
+    position: fixed;
+    bottom: 10%;
+    height: 10%;
+    background: $white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .ui.segment {
   font-size: 2em;
