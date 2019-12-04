@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     todos: JSON.parse(window.localStorage.getItem('todos')) == null ? [] : JSON.parse(window.localStorage.getItem('todos')),
-    categories: JSON.parse(window.localStorage.getItem('categories')) == null ? [] : JSON.parse(window.localStorage.getItem('categories'))
+    categories: JSON.parse(window.localStorage.getItem('categories')) == null ? [] : JSON.parse(window.localStorage.getItem('categories')),
+    creatingCategory: false
   },
   getters: {
     sortedTodos (state) {
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     },
     editCategory (state, category) {
       state.categories[state.categories.indexOf(category)] = category
+    },
+    toggleCreatingCategory (state) {
+      state.creatingCategory = !state.creatingCategory
     }
   },
   plugins: [store => {

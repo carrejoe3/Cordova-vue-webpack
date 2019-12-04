@@ -1,9 +1,9 @@
 <template>
   <div class='ui container'>
-    <button class='ui basic button icon circleBtn drop-shadow' v-on:click="openForm" v-show="!isCreating && !selectingCategory">
+    <button class='ui basic button icon circleBtn drop-shadow' v-on:click="openForm(); toggleCreatingCategory();" v-show="!creatingCategory && !selectingCategory">
       <i class='plus icon'></i>
     </button>
-    <div class="ui segment drop-shadow" v-show="isCreating && !selectingCategory">
+    <div class="ui segment drop-shadow" v-show="creatingCategory && !selectingCategory">
       <div class="content">
         <div class='ui form'>
           <div class='field'>
@@ -13,16 +13,16 @@
           <button class='ui basic blue button createBtn' v-on:click="toggleIconSelector">
             Select icon
           </button>
-          <button class='ui basic blue button createBtn' v-on:click="addCategory" :disabled="emptyNameText">
+          <button class='ui basic blue button createBtn' v-on:click="addCategory(); toggleCreatingCategory();" :disabled="emptyNameText">
             Create
           </button>
-          <button class='ui basic red button cancelBtn' v-on:click="closeForm">
+          <button class='ui basic red button cancelBtn' v-on:click="toggleCreatingCategory">
             Cancel
           </button>
         </div>
       </div>
     </div>
-    <div v-show="isCreating && selectingCategory">
+    <div v-show="creatingCategory && selectingCategory">
       <font-awesome-picker v-on:selectIcon="toggleIconSelector"></font-awesome-picker>
     </div>
   </div>
@@ -39,13 +39,12 @@ export default {
   },
   methods: {
     openForm () {
-      this.isCreating = true
       Vue.nextTick(() => {
         this.$refs.categoryNameInput.focus()
       })
     },
-    closeForm () {
-      this.isCreating = false
+    toggleCreatingCategory () {
+      this.$store.commit('toggleCreatingCategory')
     },
     addCategory () {
       const category = {
@@ -54,7 +53,6 @@ export default {
       }
       this.$store.commit('addCategory', category)
       this.categoryName = ''
-      this.isCreating = false
     },
     toggleIconSelector () {
       this.selectingCategory = !this.selectingCategory
@@ -63,7 +61,6 @@ export default {
   data () {
     return {
       categoryName: '',
-      isCreating: false,
       selectingCategory: false
     }
   },
@@ -73,7 +70,35 @@ export default {
     },
     emptyNameText () {
       return !this.categoryName.length > 0
+    },
+    creatingCategory () {
+      return this.$store.state.creatingCategory
     }
   }
 }
+
 </script>
+
+<style lang="scss">
+
+#iconPicker {
+  max-width: 100%;
+  background: none;
+  .iconPicker__header {
+    display: none;
+  }
+  .iconPicker__body {
+    overflow: initial;
+    border: none;
+    border-radius: 0px;
+  }
+  .iconPicker__icons {
+    .item {
+      width: 16%;
+      height: 16%;
+      padding: 5%;
+    }
+  }
+}
+
+</style>

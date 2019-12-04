@@ -1,7 +1,7 @@
 <template>
   <div id="categories">
     <CreateCategory />
-    <CategoryList />
+    <CategoryList v-show="!creatingCategory"/>
   </div>
 </template>
 
@@ -16,11 +16,12 @@ export default {
     CreateCategory,
     CategoryList
   },
-  methods: {
-  },
   computed: {
     categories () {
       return this.$store.state.categories
+    },
+    creatingCategory () {
+      return this.$store.state.creatingCategory
     }
   }
 }
