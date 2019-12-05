@@ -71,6 +71,9 @@
     },
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@ionic-native/local-notifications).+\\.js$"
     ]
   }
 }
