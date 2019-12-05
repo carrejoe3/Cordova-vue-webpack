@@ -21,6 +21,7 @@
     "cordova-plugin-local-notification": "^0.9.0-beta.2",
     "core-js": "^3.3.2",
     "fibers": "^4.0.2",
+    "jest-serializer-vue": "^2.0.2",
     "luxon": "^1.21.2",
     "node-sass": "^4.13.0",
     "sass": "^1.23.7",
@@ -34,6 +35,8 @@
     "weekstart": "^1.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
@@ -50,5 +53,22 @@
     "style-resources-loader": "^1.3.2",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-template-compiler": "^2.6.10"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
   }
 }
